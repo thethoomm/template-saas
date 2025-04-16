@@ -26,7 +26,7 @@ export default function Pagamentos() {
         <button
           onClick={() =>
             createSubscriptionStripeCheckout({
-              testId: "123",
+              testeId: "123",
             })
           }
           className="border border-gray-400 px-4 py-2 cursor-pointer"
