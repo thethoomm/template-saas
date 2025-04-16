@@ -16,7 +16,9 @@ export function useStripe() {
     loadStripeAsync();
   }, []);
 
-  async function createPaymentStripeCheckout(checkoutData: any) {
+  async function createPaymentStripeCheckout(checkoutData: {
+    testeId: string;
+  }) {
     if (!stripe) {
       return;
     }
@@ -57,7 +59,7 @@ export function useStripe() {
       const data = await response.json();
 
       await stripe.redirectToCheckout({
-        sessionId: data.sessionId
+        sessionId: data.sessionId,
       });
     } catch (error) {
       console.error(error);
@@ -72,15 +74,14 @@ export function useStripe() {
       },
     });
 
+    const data = await response.json();
 
-    const data = await response.json()
-
-    window.location.href = data.url
+    window.location.href = data.url;
   }
 
   return {
     createPaymentStripeCheckout,
     createSubscriptionStripeCheckout,
-    handleCreateStripePortal
+    handleCreateStripePortal,
   };
 }
