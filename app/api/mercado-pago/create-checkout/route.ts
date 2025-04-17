@@ -1,6 +1,5 @@
 import { auth } from "@/app/lib/auth";
 import mercadoPago from "@/app/lib/mercado-pago";
-import { error } from "console";
 import { Preference } from "mercadopago";
 import { NextRequest, NextResponse } from "next/server";
 
