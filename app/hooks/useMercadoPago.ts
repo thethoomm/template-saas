@@ -11,10 +11,8 @@ export function useMercadoPago() {
 
   async function createMercadoPagoCheckout({
     testeId,
-    userEmail,
   }: {
     testeId: string;
-    userEmail: string;
   }) {
     try {
       const response = await fetch("/api/mercado-pago/create-checkout", {
@@ -24,7 +22,6 @@ export function useMercadoPago() {
         },
         body: JSON.stringify({
           testeId,
-          userEmail,
         }),
       });
 

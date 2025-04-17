@@ -46,7 +46,6 @@ export default function Pagamentos() {
         <button
           onClick={() => createMercadoPagoCheckout({
             testeId: '123',
-            userEmail: 'test@gmail.com'
           })}
           className="border border-gray-400 px-4 py-2 cursor-pointer"
         >
